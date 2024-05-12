@@ -1,0 +1,15 @@
+#1 git status
+
+El comando git status es una de las herramientas más utilizadas en Git, proporcionando información esencial sobre el estado actual del repositorio en el que estás trabajando. Este comando es fundamental para entender qué está sucediendo en tu repositorio local y cómo se compara o difiere del repositorio remoto (si existe).
+
+#2 git add
+
+El comando git add es uno de los comandos más fundamentales en Git, usado para agregar cambios en el directorio de trabajo al área de preparación (staging area). Es un paso crucial antes de realizar un commit, ya que te permite seleccionar y controlar exactamente qué cambios quieres incluir en el próximo commit.
+
+#3 git rm --cached
+
+El comando git rm --cached es una instrucción de Git que se utiliza para eliminar archivos del área de preparación (staging area) y del índice de Git, pero no del sistema de archivos (es decir, los archivos permanecen en tu disco duro). Este comando es especialmente útil cuando has agregado accidentalmente un archivo al índice que no deseas incluir en tus commits o que debes agregar a tu archivo .gitignore.
+
+#4 git commit -m
+
+El comando git commit -m es fundamental en Git para guardar los cambios que has preparado en tu área de trabajo al historial de tu repositorio. El parámetro -m permite especificar un mensaje de commit directamente desde la línea de comandos, lo cual es esencial para describir las modificaciones realizadas o la intención detrás de ellas.

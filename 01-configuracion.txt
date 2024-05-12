@@ -1,0 +1,145 @@
+#1
+
+El comando `git config --global` es utilizado en Git para establecer configuraciones globales que aplican a todos los repositorios en tu sistema operativo bajo tu usuario. Este comando permite ajustar opciones de configuración específicas de Git que influenciarán el comportamiento de Git en todas tus actividades de proyectos. Aquí te explico cómo se usa y algunos ejemplos comunes:
+
+### Uso básico
+```bash
+git config --global <key> <value>
+```
+- `<key>`: Es la clave de la configuración que quieres establecer.
+- `<value>`: Es el valor que asignarás a esa clave.
+
+### Ejemplos comunes
+1. **Configurar tu nombre y correo electrónico:**
+   Antes de empezar a usar Git, es recomendable configurar tu nombre y correo electrónico, ya que cada commit de Git usa esta información para identificar al autor:
+   ```bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tu.email@example.com"
+   ```
+
+2. **Establecer el editor predeterminado:**
+   Puedes especificar qué editor de texto prefieres que Git use por defecto cuando necesite que edites algo (como un mensaje de commit):
+   ```bash
+   git config --global core.editor "code --wait"
+   ```
+   Este ejemplo establece Visual Studio Code como el editor predeterminado.
+
+3. **Configurar la herramienta de diferencias:**
+   Para visualizar las diferencias entre commits, puedes configurar una herramienta específica:
+   ```bash
+   git config --global merge.tool vimdiff
+   ```
+
+4. **Colorear la salida de la consola:**
+   Para que sea más fácil leer la salida de los comandos de Git, puedes habilitar el coloreado automático:
+   ```bash
+   git config --global color.ui auto
+   ```
+
+### Ver todas las configuraciones
+Para ver todas las configuraciones que has establecido globalmente, puedes usar:
+```bash
+git config --global --list
+```
+
+Este comando es fundamental para personalizar cómo Git se comporta en todos tus proyectos, lo que puede ayudarte a mejorar tu flujo de trabajo y a asegurarte de que tu información esté correctamente configurada. 
+
+#2
+
+El comando `git config --global -e` es útil cuando necesitas editar la configuración global de Git para el usuario actual en tu sistema. Este comando abre el archivo de configuración global en el editor de texto predeterminado que hayas definido para Git.
+
+### Cómo funciona
+El comando se descompone de la siguiente manera:
+
+- `--global`: Este modificador indica que la configuración que se va a editar es la global, que afecta a todos los repositorios del usuario en la máquina.
+- `-e` o `--edit`: Este modificador abre el editor configurado para permitirte editar directamente las configuraciones.
+
+### Ejemplo de uso
+Si ejecutas:
+
+```bash
+git config --global -e
+```
+
+Git abrirá el archivo de configuración global (`~/.gitconfig` en sistemas Unix-like como Linux y macOS, o `C:\Users\<username>\.gitconfig` en Windows) en el editor de texto predeterminado. Este archivo contiene todas tus configuraciones globales, como tu nombre, correo electrónico, editor predeterminado, alias, y otras configuraciones personalizadas.
+
+### Editando la configuración
+Dentro del editor, podrás ver y modificar las entradas de configuración existentes o agregar nuevas. Por ejemplo, si tu archivo se ve así:
+
+```ini
+[user]
+	name = Tu Nombre
+	email = tu.email@example.com
+[core]
+	editor = code --wait
+```
+
+Podrías añadir un nuevo alias o cambiar el editor por defecto, y luego guardar y cerrar el editor para que los cambios tengan efecto.
+
+Este comando es especialmente útil para ajustes rápidos o para verificar tus configuraciones sin tener que listar todas con `git config --list`.
+
+#3
+
+El comando `git config --global core.autocrlf true` es una instrucción de configuración en Git que se utiliza para manejar automáticamente las diferencias de finales de línea entre sistemas operativos, como Windows y Unix/Linux.
+
+### Explicación del Comando:
+
+- **`git config`**: Este es el comando base que se utiliza para cambiar las configuraciones de Git.
+- **`--global`**: Este modificador aplica la configuración a todos los repositorios del usuario en la máquina, en lugar de un solo repositorio.
+- **`core.autocrlf`**: Es la clave de configuración que controla cómo Git maneja los finales de línea.
+- **`true`**: Este valor configura Git para convertir automáticamente los finales de línea CRLF (Carriage Return Line Feed, usados en Windows) a LF (Line Feed, usados en Unix/Linux) cuando los archivos son añadidos al índice (staging area), y para convertirlos de vuelta a CRLF cuando los archivos son extraídos del repositorio.
+
+### Cómo Funciona:
+
+Cuando `core.autocrlf` está configurado a `true`:
+
+- **Al añadir archivos al repositorio (`git add`)**: Git convierte automáticamente los finales de línea CRLF a LF. Esto asegura que el repositorio solo contenga finales de línea LF, lo que es preferible para mantener la consistencia entre diferentes sistemas operativos y evitar problemas en las diferencias o los merges.
+- **Al extraer archivos del repositorio (`git checkout`)**: Git convierte automáticamente los finales de línea LF de vuelta a CRLF en tu copia de trabajo. Esto hace que los archivos sean compatibles con aplicaciones en Windows que esperan CRLF como finales de línea.
+
+### Impacto y Utilidad:
+
+Esta configuración es particularmente útil si estás trabajando en un proyecto que involucra colaboradores que usan diferentes sistemas operativos. Al asegurar que todos los finales de línea en el repositorio son uniformes (LF), `core.autocrlf true` ayuda a evitar problemas que pueden surgir cuando Git interpreta los cambios de finales de línea como diferencias sustanciales en los archivos, lo que podría complicar los procesos de merge y otros análisis de diferencia.
+
+#4
+
+El comando `git config --list` en Git se utiliza para listar todas las configuraciones actuales de Git disponibles para el contexto en el que se ejecuta. Este comando puede mostrar configuraciones a nivel local (repositorio específico), global (usuario específico en la máquina), y del sistema (para todos los usuarios en la máquina). Aquí te explico cómo se utiliza y qué puedes esperar al ejecutarlo.
+
+### Cómo Funciona
+Al ejecutar `git config --list`, Git recopilará y mostrará todas las configuraciones desde las fuentes disponibles, incluyendo:
+
+1. **Configuraciones Locales**: Configuraciones almacenadas en el archivo `.git/config` dentro de un repositorio Git específico.
+2. **Configuraciones Globales**: Configuraciones almacenadas en el archivo de configuración global del usuario, típicamente ubicado en `~/.gitconfig` en sistemas Unix-like o en `C:\Users\<username>\.gitconfig` en Windows.
+3. **Configuraciones del Sistema**: Configuraciones que afectan a todos los usuarios de la máquina y que están almacenadas en un archivo accesible a nivel del sistema operativo.
+
+### Ejemplo de Uso
+Simplemente ejecuta el comando en tu terminal:
+
+```bash
+git config --list
+```
+
+### Salida Esperada
+Al ejecutarlo, verás una lista de configuraciones. Aquí un ejemplo de cómo podría verse la salida:
+
+```
+user.name=Tu Nombre
+user.email=tu.email@example.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=https://github.com/usuario/repositorio.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+...
+```
+
+Cada línea muestra una configuración en el formato `clave=valor`. Estas configuraciones afectan cómo Git se comporta bajo diferentes circunstancias, incluyendo pero no limitado a operaciones de commit, visualización de diferencias, manejo de repositorios remotos, y más.
+
+### Consejos Adicionales
+- Para ver solo las configuraciones a nivel global, puedes usar `git config --global --list`.
+- Para ver solo las configuraciones de un repositorio específico, navega hasta ese repositorio en tu terminal y simplemente ejecuta `git config --list` sin ningún modificador adicional.
+
+Este comando es muy útil para diagnosticar problemas de configuración o simplemente para verificar cómo está configurado Git en diferentes niveles.

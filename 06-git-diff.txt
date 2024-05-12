@@ -1,0 +1,79 @@
+El comando `git diff` es una herramienta esencial en Git para examinar las diferencias entre diversas entidades en un repositorio de Git, como archivos, commits y más. Te permite ver qué cambios se han realizado en el código que aún no están en staging (área de preparación), cambios entre diferentes commits, entre ramas, y otros.
+
+### Uso Básico de `git diff`
+
+**1. Diferencias en el directorio de trabajo:**
+Para ver las diferencias entre el directorio de trabajo y el área de preparación (lo que ha cambiado desde tu último `git add`), simplemente ejecuta:
+
+```bash
+git diff
+```
+
+Esto mostrará las diferencias en los archivos que han sido modificados pero aún no preparados.
+
+**2. Diferencias entre el área de preparación y el último commit:**
+Para ver las diferencias entre los archivos en el área de preparación y el último commit:
+
+```bash
+git diff --staged
+```
+
+o
+
+```bash
+git diff --cached
+```
+
+Ambos comandos son equivalentes y te mostrarán lo que has preparado que está pendiente para el próximo commit comparado con el último commit.
+
+### Comparaciones Avanzadas
+
+**1. Diferencias entre commits:**
+Para ver las diferencias entre dos commits específicos, puedes usar:
+
+```bash
+git diff <commit1> <commit2>
+```
+
+Donde `<commit1>` y `<commit2>` son las referencias a los commits que quieres comparar (por ejemplo, hash del commit, etiquetas, HEAD, etc.).
+
+**2. Diferencias entre ramas:**
+Para comparar dos ramas:
+
+```bash
+git diff branch1 branch2
+```
+
+Esto mostrará las diferencias entre el HEAD de `branch1` y el HEAD de `branch2`.
+
+### Ejemplos de Uso
+
+- **Ver cambios en un archivo específico que aún no está en staging:**
+  ```bash
+  git diff path/to/file.txt
+  ```
+
+- **Comparar un archivo entre dos ramas:**
+  ```bash
+  git diff branch1 branch2 -- path/to/file.txt
+  ```
+
+- **Ver diferencias en archivos con cierto patrón:**
+  ```bash
+  git diff -- '*.js'
+  ```
+
+Este comando mostrará las diferencias en todos los archivos que terminan en `.js` que han sido modificados.
+
+### Consejos
+
+- **Visualización Mejorada:** Si las diferencias son extensas, puedes pipear la salida de `git diff` a `less` o a otro paginador para hacer más fácil la navegación:
+  ```bash
+  git diff | less
+  ```
+- **Colorear la Salida:** Asegúrate de que la opción de coloreado esté habilitada en tu configuración de Git para mejorar la legibilidad:
+  ```bash
+  git config --global color.ui auto
+  ```
+
+El uso efectivo de `git diff` puede ayudarte a realizar un seguimiento detallado de los cambios, facilitar revisiones de código y ayudar a evitar conflictos al entender completamente las modificaciones antes de realizar commits o merges.

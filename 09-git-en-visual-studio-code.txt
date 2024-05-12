@@ -1,0 +1,40 @@
+Visual Studio Code (VS Code) ofrece una integración muy efectiva con Git, permitiendo a los usuarios gestionar su repositorio directamente desde el editor. Esta funcionalidad facilita tareas como commit, merge, pull, y push, entre otras, sin tener que salir del entorno de desarrollo. Aquí te explico cómo puedes utilizar Git dentro de VS Code:
+
+### Configuración Inicial
+
+1. **Instalar Git:** Primero, asegúrate de que Git esté instalado en tu sistema. VS Code detectará automáticamente la instalación de Git y la utilizará para su funcionalidad integrada.
+
+2. **Abrir un proyecto con Git:** Al abrir un directorio que contiene un repositorio de Git, VS Code reconoce automáticamente la configuración de Git. Los archivos se marcarán con iconos indicativos que muestran su estado (modificado, añadido, sin seguimiento, etc.).
+
+### Uso Básico de Git en VS Code
+
+1. **Control de versiones integrado:** Puedes acceder a la vista de control de versiones en VS Code abriendo la paleta de comandos (`Ctrl+Shift+G` o desde el ícono de branch en la barra lateral izquierda).
+
+2. **Hacer cambios en los archivos:** Cuando editas archivos, VS Code muestra estos cambios en la barra lateral. Los archivos modificados aparecerán con un color diferente (por lo general, en amarillo o azul dependiendo del tema).
+
+3. **Staging de cambios:** Para añadir archivos al área de staging, puedes hacer clic en el signo más (`+`) al lado del archivo en la barra lateral o clic derecho y seleccionar "Stage Changes".
+
+4. **Commit de cambios:** Después de añadir los archivos al staging, puedes escribir un mensaje de commit en el campo provisto en la parte superior de la barra lateral de Git y presionar `Ctrl+Enter` para hacer el commit.
+
+5. **Sincronización con repositorios remotos:** Puedes hacer pull y push a repositorios remotos utilizando los botones en la barra de estado de VS Code, o desde la paleta de comandos.
+
+### Características Avanzadas
+
+1. **Branching:** VS Code permite gestionar ramas directamente desde la interfaz. Puedes crear, cambiar y eliminar ramas desde el menú de control de versiones.
+
+2. **Resolver conflictos de merge:** Cuando hay conflictos de merge, VS Code los resalta y ofrece una interfaz para resolverlos directamente en el editor.
+
+3. **Historial de commits:** Puedes visualizar el historial de commits de una rama utilizando extensiones como "GitLens", que proporciona una vista enriquecida del historial de commits, incluyendo detalles como autor del commit, mensajes, y cambios específicos.
+
+### Extensiones Útiles
+
+- **GitLens:** Mejora la visualización del repositorio con funciones como exploradores de repositorios, visualización en línea de detalles de commit, comparaciones, etc.
+- **Git History:** Permite ver el historial de Git gráficamente y realizar búsquedas en el historial de commits o archivos.
+
+### Consejos
+
+- **Configuración de Git:** Asegúrate de configurar tu nombre de usuario y correo electrónico de Git en VS Code utilizando `git config --global user.name "tu nombre"` y `git config --global user.email "tu@email.com"`.
+
+- **Teclas rápidas:** Aprende los atajos de teclado para Git en VS Code para aumentar tu productividad.
+
+La integración de Git con VS Code no solo simplifica la gestión de versiones, sino que también mejora la eficiencia del flujo de trabajo, haciéndolo ideal para tanto desarrolladores individuales como equipos.

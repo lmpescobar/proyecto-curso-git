@@ -1,0 +1,34 @@
+Los flujos de trabajo en Git, o *Git workflows*, son un conjunto de reglas y recomendaciones sobre cómo usar Git para realizar el desarrollo de software de manera efectiva y organizada. Estos flujos están diseñados para ayudar a equipos de cualquier tamaño a manejar el desarrollo, las pruebas, las revisiones y las publicaciones de software con claridad y eficiencia. Aquí te presento algunos de los flujos de trabajo más comunes utilizados en la industria:
+
+### 1. **Flujo de Trabajo Centralizado**
+Es similar al modelo de control de versiones como SVN. En este flujo, todos los colaboradores sincronizan su trabajo con un único repositorio central. Este flujo es simple y efectivo para equipos pequeños.
+
+- **Pros**: Fácil de entender y manejar.
+- **Contras**: No escala bien con equipos muy grandes, ya que las colaboraciones pueden generar conflictos frecuentes.
+
+### 2. **Feature Branch Workflow**
+Cada característica se desarrolla en una rama separada basada en `main` o `master`, que luego se mergea de vuelta a la rama principal una vez que la característica está completa y revisada. Esto asegura que el desarrollo de características nuevas esté aislado y no afecte a la rama principal.
+
+- **Pros**: Mantiene el desarrollo organizado y permite integraciones continuas.
+- **Contras**: Puede complicarse si no se gestionan bien las ramas y las características son muy grandes o duran mucho tiempo.
+
+### 3. **Gitflow Workflow**
+Es un modelo de ramificación diseñado específicamente para el lanzamiento de proyectos. Este flujo define un conjunto estricto de ramas con roles específicos: características, lanzamientos y correcciones de errores, cada una con su propia rama separada.
+
+- **Pros**: Muy estructurado, ideal para lanzamientos planificados.
+- **Contras**: Relativamente complejo; puede ser más de lo necesario para proyectos pequeños.
+
+### 4. **Forking Workflow**
+Es principalmente usado en proyectos de código abierto. Cada desarrollador hace un *fork* del repositorio oficial, realiza cambios en su copia personal y luego solicita que estos cambios se integren en el repositorio original mediante un *pull request*.
+
+- **Pros**: Contribuciones muy claras y seguras, ideal para proyectos con muchos colaboradores.
+- **Contras**: Requiere más esfuerzo en la gestión y en la revisión de contribuciones.
+
+### 5. **Pull Requests**
+No es un flujo de trabajo en sí mismo, pero es una práctica común en muchos flujos de trabajo basados en Git, especialmente en GitHub. Los desarrolladores empujan sus ramas a un repositorio central, pero antes de que se mergeen a `main` o `master`, deben ser revisadas y aprobadas a través de pull requests.
+
+- **Pros**: Aumenta la calidad del código y fomenta la colaboración.
+- **Contras**: Puede ralentizar el proceso si no se gestionan eficientemente.
+
+### Elección del Flujo de Trabajo
+La elección del flujo de trabajo de Git adecuado depende de varios factores, como el tamaño del equipo, la naturaleza del proyecto, y las políticas de gestión del proyecto. En general, es importante elegir un flujo que promueva la claridad y minimice los conflictos en el código, al tiempo que se adapta a las necesidades y la cultura del equipo de desarrollo.

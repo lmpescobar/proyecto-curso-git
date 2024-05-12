@@ -1,0 +1,7 @@
+#1 git log
+
+El comando git log es una herramienta esencial en Git para visualizar el historial de commits de un repositorio. Te permite ver la lista de commits, incluyendo detalles como el autor del commit, la fecha, y el mensaje de commit asociado.
+
+#2 git log --oneline
+
+El comando git log --oneline es una forma condensada de visualizar el historial de commits en un repositorio de Git. Este comando simplifica la salida estándar de git log para mostrar cada commit en una sola línea, haciendo más fácil y rápida la revisión del historial.

@@ -1,0 +1,31 @@
+#1 ls
+
+El comando ls es un comando fundamental en sistemas operativos tipo Unix, como Linux y macOS. Se utiliza para listar los contenidos de un directorio, mostrando los archivos y carpetas que contiene.
+
+#2 cd
+
+Para usar el comando cd, simplemente escribes cd seguido por el path (ruta) al directorio al que deseas cambiar.
+
+#3 pwd
+
+El comando pwd (print working directory) es utilizado en sistemas operativos tipo Unix, como Linux y macOS, para mostrar el directorio de trabajo actual. Es muy útil cuando estás navegando por el sistema de archivos en la terminal y deseas confirmar tu ubicación actual dentro de la estructura de directorios.
+
+#4 cd . .
+
+El comando cd .. es utilizado en las interfaces de línea de comandos de los sistemas operativos tipo Unix (como Linux y macOS) y Windows para cambiar el directorio de trabajo actual al directorio padre del directorio en el que te encuentras actualmente. En otras palabras, te permite subir un nivel en la jerarquía del sistema de archivos.
+
+#5 ls -a
+
+El comando ls -a en sistemas operativos tipo Unix, como Linux y macOS, se utiliza para listar todos los archivos y directorios en el directorio actual, incluyendo aquellos que están ocultos. Los archivos y directorios ocultos son aquellos cuyo nombre comienza con un punto (.). 
+
+#6 mkdir
+
+El comando mkdir (make directory) es utilizado en sistemas operativos tipo Unix, como Linux y macOS, así como en Windows (a través de la interfaz de comandos o PowerShell), para crear uno o más directorios nuevos. Es un comando fundamental para la organización y gestión de archivos y carpetas desde la línea de comandos.
+
+#7 git init
+
+El comando git init es uno de los primeros comandos que se utilizan al comenzar a trabajar con Git. Este comando se emplea para inicializar un nuevo repositorio de Git. Esencialmente, git init crea un nuevo subdirectorio llamado .git en el directorio actual, que contiene todos los archivos necesarios para el repositorio de Git. Aquí te explico más en detalle. 
+
+#8 code .
+
+El comando code . es comúnmente usado para abrir el editor Visual Studio Code (VS Code) en el directorio actual. Este comando es parte de una funcionalidad que permite a los usuarios de VS Code integrar el editor con la terminal o línea de comandos de su sistema operativo.

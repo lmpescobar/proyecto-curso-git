@@ -1,0 +1,11 @@
+#1 git branch
+
+El comando git branch en Git es fundamental para la gestión de ramas dentro de un repositorio. Las ramas son utilizadas en Git para desarrollar funcionalidades aisladas unas de otras, lo que facilita el desarrollo paralelo sin afectar la línea principal de desarrollo hasta que la funcionalidad esté lista para ser integrada.
+
+#2 checkout -b
+
+El comando git checkout -b en Git es una instrucción muy utilizada que combina dos operaciones en una: crear una nueva rama y cambiar a ella inmediatamente. Este comando es una forma rápida y eficiente de comenzar a trabajar en una nueva funcionalidad o corrección sin afectar el desarrollo principal o otras ramas.
+
+#3
+
+El comando git merge en Git es utilizado para fusionar dos o más historias de desarrollo juntas. Este comando es fundamental cuando quieres incorporar los cambios de una rama (por ejemplo, una rama de desarrollo o de características) en otra (como la rama principal o 'master'). Te permite combinar el trabajo realizado en diferentes ramas, resolviendo las diferencias y consolidando los cambios en una sola línea histórica.
