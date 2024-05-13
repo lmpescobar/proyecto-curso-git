@@ -1,0 +1,7 @@
+Un "git graph" se refiere a la representación gráfica de la historia de un repositorio de Git, mostrando cómo se han realizado cambios y cómo se relacionan entre sí las diferentes ramas y commits.
+
+Git es un sistema de control de versiones distribuido, lo que significa que permite a los desarrolladores trabajar en paralelo en diferentes ramas de un proyecto, fusionar cambios y mantener un historial de versiones completo.
+
+El "git graph" es una herramienta visual útil para entender la estructura y el flujo de trabajo de un proyecto en Git. Puede mostrarse en diferentes formatos, como líneas de tiempo, árboles, o gráficos de nodos y conexiones que representan los commits y las relaciones entre ellos.
+
+Estas representaciones gráficas pueden ayudar a los desarrolladores a visualizar la evolución del proyecto, identificar ramas activas, encontrar conflictos de fusión y entender la relación entre los diferentes cambios realizados por los colaboradores del proyecto. Además, el uso de herramientas para visualizar el "git graph" puede hacer más fácil la navegación y comprensión del historial del repositorio.
