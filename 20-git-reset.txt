@@ -1,0 +1,42 @@
+El comando `git reset` es una herramienta poderosa en Git que permite modificar el estado actual de tu rama local, redefiniendo lo que se considera el "último" commit. Este comando puede ser usado de varias maneras, dependiendo de los parámetros que se le pasen, y puede afectar tanto a tu directorio de trabajo como al índice (staging area), además del propio historial de commits.
+
+### Funciones Principales
+
+`git reset` tiene tres modos principales de operación, que se diferencian por sus opciones `--soft`, `--mixed` y `--hard`. Estos modos permiten distintos niveles de 'intervención' en tu repositorio:
+
+1. **Soft (`--soft`)**:
+   - `git reset --soft <commit>` sólo mueve el puntero HEAD al commit especificado, sin cambiar el índice (staging area) ni el directorio de trabajo. Es útil si quieres deshacer un commit pero mantener los cambios para volver a comprometerlos de diferente manera.
+
+2. **Mixed (`--mixed`)**:
+   - Este es el modo por defecto si no especificas una opción. `git reset <commit>` moverá HEAD y también restablecerá el índice para que coincida con el estado del commit especificado, pero dejará los archivos en el directorio de trabajo sin cambios. Esto significa que los cambios que habías preparado para el commit volverán al estado de "modificados pero no preparados".
+
+3. **Hard (`--hard`)**:
+   - `git reset --hard <commit>` es la forma más drástica de reset. Moverá HEAD y restablecerá tanto el índice como el directorio de trabajo para coincidir con el estado del commit especificado. Cualquier cambio que tengas en el índice o en el directorio de trabajo que no haya sido comprometido se perderá.
+
+### Ejemplos de Uso
+
+- **Deshacer un commit manteniendo los cambios**:
+  ```bash
+  git reset --soft HEAD^
+  ```
+  Esto mueve el puntero HEAD al commit anterior (deshaciendo el último commit) pero deja tus cambios en el área de staging, listos para ser recomprometidos si así lo deseas.
+
+- **Quitar cambios del área de staging**:
+  ```bash
+  git reset HEAD^
+  ```
+  Esto quita los cambios del área de staging relacionados con el último commit pero los deja en el directorio de trabajo.
+
+- **Deshacer completamente un commit**:
+  ```bash
+  git reset --hard HEAD^
+  ```
+  Esto eliminará completamente el último commit, junto con todos los cambios que contenía, y revertirá tu directorio de trabajo al estado en el que estaba antes de ese commit.
+
+### Consideraciones
+
+- **Peligro de `--hard`**: Ten cuidado con `git reset --hard`, especialmente al usarlo con commits que no han sido empujados a un repositorio remoto. Los cambios deshechos con `--hard` no se pueden recuperar fácilmente a menos que tengas una copia de ellos.
+
+- **Uso en repositorios compartidos**: Evita usar `git reset` en ramas que se han compartido públicamente y que otros puedan estar utilizando, ya que puede causar confusiones y problemas cuando otros intenten sincronizar sus cambios.
+
+`git reset` es una herramienta versátil y potente en Git, capaz de ayudarte a manejar y rectificar errores en tu historial de commits, pero debe ser usada con cautela para evitar la pérdida irreparable de datos.
