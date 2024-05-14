@@ -1,0 +1,54 @@
+El comando `git stash` es una herramienta muy útil en Git para guardar temporalmente cambios que no están listos para ser comprometidos (commit) de forma permanente. Esto permite a los desarrolladores mantener un directorio de trabajo limpio al pasar de una tarea a otra sin perder los avances actuales.
+
+### Función Principal
+
+`git stash` toma tanto el estado de tu directorio de trabajo (working directory) como el del índice (staging area) y lo guarda en un área de trabajo temporal, permitiéndote revertir tu directorio de trabajo a la última confirmación (commit) limpia. Los cambios estancados pueden ser recuperados posteriormente, ya sea en la misma rama o en otra.
+
+### Uso Común
+
+Es útil cuando necesitas cambiar rápidamente de contexto y trabajar en otra parte del proyecto, pero no quieres hacer un commit de un trabajo incompleto solo para volver más tarde. También es valioso para experimentar con cambios sin afectar el estado actual del proyecto.
+
+### Comandos Básicos
+
+- **Guardar cambios**: Para estancar los cambios en tu directorio de trabajo y en el índice, puedes usar:
+
+  ```bash
+  git stash push -m "Mensaje descriptivo"
+  ```
+
+  El mensaje es opcional, pero es útil para recordar el propósito de los cambios guardados.
+
+- **Listar estancados**: Para ver una lista de los cambios estancados, utiliza:
+
+  ```bash
+  git stash list
+  ```
+
+  Esto mostrará una lista de los stashes almacenados, cada uno con un identificador y el mensaje (si se proporcionó uno).
+
+- **Aplicar el último estancado**: Para aplicar el stash más reciente a tu directorio de trabajo actual y eliminarlo de la lista de stash, puedes usar:
+
+  ```bash
+  git stash pop
+  ```
+
+- **Aplicar un estancado específico**: Si tienes varios stashes y quieres aplicar uno que no sea el último, puedes referirte a él por su identificador en la lista:
+
+  ```bash
+  git stash apply stash@{n}
+  ```
+
+  Donde `{n}` es el índice del stash en la lista.
+
+- **Eliminar un estancado**: Si quieres eliminar un stash de la lista después de aplicarlo o si ya no lo necesitas, puedes hacer:
+
+  ```bash
+  git stash drop stash@{n}
+  ```
+
+### Consideraciones
+
+- **Seguridad**: Los cambios guardados en el stash están solo localmente en tu sistema y no son parte del repositorio hasta que los comprometes y los subes.
+- **Manejo de conflictos**: Al igual que con `git merge` y `git rebase`, aplicar un stash puede resultar en conflictos que deben ser resueltos manualmente.
+
+`git stash` es una herramienta indispensable para gestionar tareas múltiples en un repositorio sin comprometer la integridad del trabajo actual. Permite a los desarrolladores moverse libremente entre diferentes estados de trabajo sin la necesidad de comprometer código incompleto o no probado.

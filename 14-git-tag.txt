@@ -1,0 +1,71 @@
+El comando `git tag` en Git es utilizado para marcar puntos específicos en la historia del repositorio como importantes. Esto se hace generalmente para indicar versiones de lanzamiento (releases) de un proyecto. Los tags en Git son similares a los commits en cuanto a que señalan a un punto específico en la historia del repositorio, pero su propósito es actuar como puntos de referencia fijos que facilitan la navegación a través de versiones significativas del código.
+
+### Tipos de Tags
+
+Hay dos tipos principales de tags en Git:
+
+1. **Lightweight tags**: Son los más simples y básicamente son un nombre asignado a un commit específico. No almacenan información adicional del commit más allá del hash del commit al que hacen referencia.
+
+2. **Annotated tags**: Estos son almacenados como objetos completos en la base de datos de Git. Incluyen el nombre del tagger (persona que crea el tag), email, fecha, un mensaje de tagging y opcionalmente pueden ser firmados y verificados con GPG. Los tags anotados son útiles para una documentación más rica y control de versiones formal.
+
+### Uso Común
+
+Los tags son comúnmente usados para marcar versiones de release (v1.0, v2.0, etc.), puntos de revisión de código o para señalar estados del código para referencia futura.
+
+### Crear Tags
+
+- **Crear un tag anotado**: Para crear un tag anotado, puedes usar el siguiente comando:
+
+  ```bash
+  git tag -a v1.0 -m "Versión 1.0 del proyecto"
+  ```
+
+  Donde `v1.0` es el nombre del tag y `-m` seguido del mensaje es una descripción corta del tag.
+
+- **Crear un tag ligero**: Para crear un tag ligero, simplemente omite las opciones `-a`, `-s`, o `-m`:
+
+  ```bash
+  git tag v1.0-LW
+  ```
+
+### Listar Tags
+
+Para ver una lista de los tags en el repositorio, puedes usar el comando:
+
+```bash
+git tag
+```
+
+### Mostrar Información de un Tag
+
+Para ver información detallada sobre un tag, incluido el commit al que apunta, puedes usar:
+
+```bash
+git show v1.0
+```
+
+### Borrar Tags
+
+Si necesitas eliminar un tag, puedes hacerlo con el siguiente comando:
+
+```bash
+git tag -d v1.0
+```
+
+### Subir Tags a un Repositorio Remoto
+
+Por defecto, los tags no son automáticamente subidos al servidor remoto cuando usas `git push`. Puedes subir un tag específico con este comando:
+
+```bash
+git push origin v1.0
+```
+
+Y para subir todos los tags a la vez, puedes usar:
+
+```bash
+git push origin --tags
+```
+
+### Conclusión
+
+Los tags en Git ofrecen una manera eficiente de marcar y recuperar versiones importantes o estados del proyecto sin afectar el flujo actual de desarrollo. Esto es particularmente útil en entornos donde el control de versiones y la trazabilidad son cruciales.

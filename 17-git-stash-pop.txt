@@ -1,0 +1,34 @@
+El comando `git stash pop` en Git se utiliza para aplicar cambios guardados en el área de stash a tu directorio de trabajo actual y luego eliminar esa entrada específica del stash. Es una herramienta útil cuando deseas recuperar los cambios que habías guardado temporalmente con `git stash push` y continuar trabajando en ellos.
+
+### Función Principal
+
+`git stash pop` aplica los cambios del stash más reciente (o especificado) a tu rama actual y elimina esos cambios de la lista de stashes. Es una combinación de dos comandos: `git stash apply` para aplicar los cambios y `git stash drop` para luego eliminar esos cambios del stash.
+
+### Cómo Funciona
+
+Cuando ejecutas `git stash pop`, Git intentará reintegrar los cambios estancados en tu directorio de trabajo y el índice. Aquí está el proceso paso a paso:
+
+1. **Aplicar Cambios**: Git toma el stash más reciente (a menos que especifiques otro) y trata de aplicar esos cambios a tu rama actual. Si el directorio de trabajo y el índice están limpios (sin cambios), el proceso es directo.
+
+2. **Eliminar el Stash**: Si los cambios se aplican sin conflictos, Git automáticamente elimina esa entrada del stash. Si hay conflictos, el stash no se elimina automáticamente, permitiéndote resolver esos conflictos sin perder acceso a los cambios estancados.
+
+### Uso Común
+
+`git stash pop` es comúnmente utilizado en situaciones donde has guardado cambios para trabajar en algo más y luego deseas volver a esos cambios. Aquí están los pasos para usarlo:
+
+```bash
+git stash pop
+```
+
+Este comando intentará aplicar el stash más reciente y luego eliminarlo de la lista de stashes.
+
+### Manejo de Conflictos
+
+Si Git encuentra conflictos entre los cambios en el stash y el estado actual del directorio de trabajo, te informará y dejará los archivos conflictivos en un estado en el que puedes editarlos manualmente. Después de resolver los conflictos, necesitas marcarlos como resueltos usando `git add`. En casos donde el `pop` es exitoso, los cambios del stash se eliminan automáticamente. Si hay conflictos, puedes eliminar manualmente el stash después de resolverlos con `git stash drop`.
+
+### Consideraciones
+
+- **Seguridad**: Al utilizar `git stash pop`, es importante recordar que estás eliminando esos cambios del stash. Si accidentalmente causas un problema, esos cambios no estarán fácilmente disponibles en el stash después de un `pop` exitoso.
+- **Alternativa**: Si prefieres ser más cauteloso, puedes usar `git stash apply` para aplicar el stash sin eliminarlo. Esto te permite verificar que todo está como deseas antes de decidir eliminar el stash con `git stash drop`.
+
+En resumen, `git stash pop` es una herramienta útil para recuperar y continuar trabajando en cambios que habías puesto en pausa temporalmente, con la conveniencia adicional de limpiar automáticamente tu stash una vez que esos cambios son aplicados con éxito.
