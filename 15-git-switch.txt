@@ -1,0 +1,47 @@
+El comando `git switch` es una adición relativamente reciente en Git, diseñado para simplificar el proceso de cambio entre diferentes ramas. Este comando fue introducido en Git 2.23.0 como una alternativa más específica y segura al comando `git checkout`, que se usa para múltiples propósitos, incluyendo el cambio de ramas y el manejo de archivos.
+
+### Función Principal
+
+El principal uso de `git switch` es cambiar de una rama a otra. Esto permite a los desarrolladores moverse fácilmente entre distintas líneas de desarrollo dentro del mismo repositorio.
+
+### Sintaxis Básica
+
+```bash
+git switch <nombre-rama>
+```
+
+Donde `<nombre-rama>` es el nombre de la rama a la que deseas cambiar. Este comando te moverá a esa rama, actualizando tanto el directorio de trabajo como el índice para reflejar el estado de la rama seleccionada.
+
+### Crear y Cambiar a Nueva Rama
+
+Una funcionalidad muy útil de `git switch` es la capacidad de crear una nueva rama y cambiar a ella en un solo paso:
+
+```bash
+git switch -c <nombre-nueva-rama>
+```
+
+La opción `-c` viene de "create" (crear). Esto es equivalente a hacer `git checkout -b <nombre-nueva-rama>`, pero más intuitivo para nuevos usuarios que aprenden Git.
+
+### Recuperar Versiones Anteriores
+
+Además de cambiar entre ramas, `git switch` puede usarse para cambiar temporalmente a un commit específico, sin crear una nueva rama, usando el modo "detach":
+
+```bash
+git switch --detach <commit>
+```
+
+Esto te moverá a un "estado detach", donde puedes inspeccionar el estado del repositorio en ese commit específico, realizar pruebas o recuperación de datos, sin afectar ninguna rama existente.
+
+### Restaurar Archivos al Último Commit
+
+Si bien `git switch` está orientado a trabajar con ramas, puedes usarlo para restaurar archivos al estado del último commit en la rama actual, similar a `git checkout`:
+
+```bash
+git restore --source <nombre-rama> <archivo>
+```
+
+Este uso de `git restore` es más recomendado para operaciones relacionadas con archivos, mientras que `git switch` se centra en operaciones de rama.
+
+### Conclusión
+
+`git switch` proporciona una manera clara y enfocada de gestionar cambios entre ramas en un repositorio Git. Su diseño busca clarificar las operaciones en Git, haciendo la gestión de ramas más accesible, especialmente para aquellos que son nuevos en el uso de sistemas de control de versiones.
